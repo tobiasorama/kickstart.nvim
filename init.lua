@@ -547,6 +547,8 @@ require('lazy').setup({
         auto_start = 'shut-up',
       }
 
+      require 'coq'
+
       local servers = {
         clangd = {},
         gopls = {},
