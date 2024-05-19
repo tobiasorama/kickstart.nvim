@@ -543,12 +543,6 @@ require('lazy').setup({
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      vim.g.coq_settings = {
-        auto_start = 'shut-up',
-      }
-
-      require 'coq'
-
       local servers = {
         clangd = {},
         gopls = {},
@@ -883,6 +877,9 @@ require('neovim-tmux-navigator').setup {
   -- only works when pane_nowrap is set to true
   cross_win = true,
 }
+
+vim.cmd 'COQnow -s'
+local coq = require 'coq'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
